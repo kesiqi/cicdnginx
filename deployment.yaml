@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicdnginx
+spec:
+  selector:
+    matchLabels:
+      app: cicdnginx
+  template:
+    metadata:
+      labels:
+        app: cicdnginx
+    spec:
+      containers:
+      - name: cicdnginx
+        image: kesq/cicdnginx:v1
+        resources:
+#          limits:
+#            memory: "128Mi"
+#            cpu: "500m"
+#        ports:
+        #- containerPort: <Port>
